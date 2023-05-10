@@ -13,7 +13,7 @@ export abstract class BaseService<T> {
   }
 
   findOne(id: any): Promise<T> {
-    return this.getRepository().findOne(id);
+    return this.getRepository().findOne({where: id});
   }
 
   save(entity: T): Promise<T> {

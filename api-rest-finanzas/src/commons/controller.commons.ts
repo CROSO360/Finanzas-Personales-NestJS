@@ -24,7 +24,7 @@ export abstract class BaseController<T> {
 
   @Get('find/:id')
   async findOne(@Param('id') id): Promise<T> {
-    return await this.getService().findOne(id);
+    return await this.getService().findOne({id});
   }
 
   @Post('save')
